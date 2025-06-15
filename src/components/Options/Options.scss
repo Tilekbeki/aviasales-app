@@ -48,6 +48,8 @@
             -moz-appearance: none;
 
             &:checked {
+                border: 1px solid rgb(33, 150, 243);
+
                 &::after {
                     content: '';
                     position: absolute;

@@ -1,6 +1,8 @@
 .tabs {
     display: flex;
     border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgb(223, 229, 236);
 }
 
 .tab {
@@ -10,7 +12,7 @@
     height: 50px;
     box-sizing: border-box;
     /* Secondary Colors/Border */
-    border: 1px solid rgb(223, 229, 236);
+    border-left: 1px solid rgb(223, 229, 236);
     /* Primary Colors/White */
     background: rgb(255, 255, 255);
     color: rgb(74, 74, 74);
@@ -22,6 +24,10 @@
     text-align: center;
     text-transform: uppercase;
     transition: all 0.5s;
+
+    &:first-child {
+        border: unset;
+    }
 
     &_active {
         /* Frequently Used/Primary 500 */
