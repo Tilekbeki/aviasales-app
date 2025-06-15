@@ -1,0 +1,16 @@
+body {
+    background: rgb(243, 247, 250);
+}
+
+.app-container {
+    width: 754px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

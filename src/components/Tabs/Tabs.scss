@@ -1,0 +1,32 @@
+.tabs {
+    display: flex;
+    border-radius: 10px;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 15px;
+    width: 168px;
+    height: 50px;
+    box-sizing: border-box;
+    /* Secondary Colors/Border */
+    border: 1px solid rgb(223, 229, 236);
+    /* Primary Colors/White */
+    background: rgb(255, 255, 255);
+    color: rgb(74, 74, 74);
+    font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.5s;
+
+    &_active {
+        /* Frequently Used/Primary 500 */
+        color: #fff;
+        background: rgb(33, 150, 243);
+        border: 1px solid rgb(33, 150, 243);
+    }
+}
