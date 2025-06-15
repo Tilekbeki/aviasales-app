@@ -18,9 +18,6 @@ const Tabs = () => {
       <div className={`tab ${activeSort === 'fast' ? 'tab_active' : ''}`} onClick={() => handleClick('fast')}>
         САМЫЙ БЫСТРЫЙ
       </div>
-      <div className={`tab ${activeSort === 'optimal' ? 'tab_active' : ''}`} onClick={() => handleClick('optimal')}>
-        ОПТИМАЛЬНЫЙ
-      </div>
     </div>
   );
 };

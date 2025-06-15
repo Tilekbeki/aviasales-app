@@ -1,13 +1,28 @@
-import Ticket from '../Ticket';
-import './TicketList.scss'
-const elements = Array.from({ length: 5 }, (_, index) => <Ticket key={index} />);
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTickets } from '../store/actions/ticketActions';
+import Ticket from '../Ticket/Ticket';
+import './TicketList.scss';
 
 const TicketList = () => {
-    return (
-        <div className='ticket-list'>
-            {elements}
-        </div>
-    );
-}
+  const dispatch = useDispatch();
+  const { items, loading, error } = useSelector(state => state.tickets);
 
-export default TicketList;
+  useEffect(() => {
+    dispatch(fetchTickets());
+  }, [dispatch]);
+
+  if (loading) return <div>Загрузка...</div>;
+  if (error) return <div>Ошибка: {error}</div>;
+  const elemetns = items.map((ticket, index) => (
+        <Ticket key={index}>{ticket.price} {ticket.carrier}<br/> {ticket.segments[0].destination}</Ticket>
+      ))
+  return (
+    <div className="ticket-list">
+        {elemetns}
+    </div>
+  );
+};
+
+
+export default TicketList
