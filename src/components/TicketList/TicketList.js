@@ -6,7 +6,7 @@ import './TicketList.scss';
 
 const TicketList = () => {
   const dispatch = useDispatch();
-  const { items, loading, error } = useSelector(state => state.tickets);
+  const { displayedItems, loading, error } = useSelector(state => state.tickets);
 
   useEffect(() => {
     dispatch(fetchTickets());
@@ -14,8 +14,19 @@ const TicketList = () => {
 
   if (loading) return <div>Загрузка...</div>;
   if (error) return <div>Ошибка: {error}</div>;
-  const elemetns = items.map((ticket, index) => (
-        <Ticket key={index}>{ticket.price} {ticket.carrier}<br/> {ticket.segments[0].destination}</Ticket>
+  const elemetns = displayedItems.map((ticket, index) => (
+        <Ticket key = {index} 
+        carrier = {ticket.carrier} 
+        price = {ticket.price} 
+        firstDate = {ticket.segments[0].date}
+        secondDate = {ticket.segments[1].date}
+        firstFlight = {ticket.segments[0].origin+` – `+ticket.segments[0].destination}
+        secondFlight = {ticket.segments[1].origin+` – `+ticket.segments[1].destination}
+        firstFlightStops = {ticket.segments[0].stops}
+        secondFlightStops = {ticket.segments[1].stops}
+        firstDuration = {ticket.segments[0].duration}
+        secondDuration = {ticket.segments[1].duration}
+        ></Ticket>
       ))
   return (
     <div className="ticket-list">

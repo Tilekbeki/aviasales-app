@@ -9,7 +9,7 @@ const App = () => {
         <>
         <header className="header">
                 <Logo />
-            </header>
+        </header>
         <div className="app-container">
             
             <Options/>

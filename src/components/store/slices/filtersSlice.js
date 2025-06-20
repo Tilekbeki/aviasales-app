@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+  sort: 'cheapest',
   all: true,
   zero: true,
   one: true,

@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "luxon": "^3.6.1",
     "sass": "^1.89.2"
   }
 }
