@@ -1,42 +1,47 @@
-const initialState = {
+import { createSlice } from "@reduxjs/toolkit";
+
+const ticketsSlice = createSlice({
+  name: 'tickets',
+  initialState: {
   sortType: 'cheapest',
   items: [],
   displayedItems: [],
   loading: false,
   error: null,
-  offset: 5,          // сколько билетов показываем сейчас
-};
-
-export default function ticketsReducer(state = initialState, action) {
-  switch (action.type) {
-    case 'tickets/fetchStart':
-      return { ...state, loading: true, error: null };
-
-    case 'tickets/fetchSuccess':
-      return {
-        ...state,
-        loading: false,
-        items: action.payload,
-        displayedItems: action.payload.slice(0, state.offset),
-      };
-
-    case 'tickets/fetchError':
-      return { ...state, loading: false, error: action.payload };
-
-    /** ⬇️ добавляем новый кейс */
-    case 'tickets/loadMore': {
-      const step   = action.payload ?? 5;                    // сколько прибавляем
-      const limit  = state.items.length;                     // всего билетов
-      const offset = Math.min(state.offset + step, limit);   // защищаем от выхода за предел
-      console.log('')
-      return {
-        ...state,
-        offset,
-        displayedItems: state.items.slice(0, offset),
-      };
+  offset: 5,
+},
+  reducers: {
+    fetchStart(state) {
+      state.loading = true;
+      state.error = null;
+    },
+    fetchSuccess(state, action) {
+      state.loading = false;
+      state.items = action.payload;
+      state.displayedItems = action.payload.slice(0, state.offset);
+    },
+    fetchError(state, action) {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    loadMore(state, action) {
+      const step = action.payload ?? 5;
+      const limit = state.items.length;
+      const newOffset = Math.min(state.offset + step, limit);
+      state.offset = newOffset;
+      state.displayedItems = state.items.slice(0, newOffset);
+    },
+    sort(state, action) {
+      state.sortType = action.payload;
+    },
+    setDisplayedItems(state, action) {
+      state.displayedItems = action.payload;
+    },
+    setSortedItems(state, action) {
+      state.items = action.payload;
     }
+  },
+});
 
-    default:
-      return state;
-  }
-}
+export const { fetchStart, fetchSuccess, fetchError, loadMore, sort, setDisplayedItems, setSortedItems } = ticketsSlice.actions;
+export default ticketsSlice.reducer;

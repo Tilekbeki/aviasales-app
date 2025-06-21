@@ -45,7 +45,7 @@ const Ticket = (props) => {
                     </div>
                     <div className='ticket__layover'>
                         <div className='gray-text'>{optionsOfOverlays(firstFlightStops.length)}</div>
-                        <div>{firstFlightStops.join(', ')}</div>
+                        {firstFlightStops.length>0 ? <div>{firstFlightStops.join(', ')}</div> : null}
                     </div>
                 </div>
                 <div className='ticket__segments'>
@@ -59,7 +59,7 @@ const Ticket = (props) => {
                     </div>
                     <div className='ticket__layover'>
                         <div className='gray-text'>{optionsOfOverlays(secondFlightStops.length)}</div>
-                        <div>{secondFlightStops.join(', ')}</div>
+                        {secondFlightStops.length>0 ? <div>{secondFlightStops.join(', ')}</div> : null}
                     </div>
                 </div>
             </div>
