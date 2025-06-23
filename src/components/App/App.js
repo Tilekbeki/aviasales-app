@@ -18,7 +18,7 @@ const App = () => {
         <main className="main">
           <Tabs />
           <TicketList />
-          {!loading || !error ? null : <Pagination />}
+          {!loading && !error && <Pagination />}
         </main>
       </div>
     </>
