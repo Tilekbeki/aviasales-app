@@ -1,22 +1,21 @@
-import { setDisplayedItems } from "../store/slices/ticketSlice";
+import { setDisplayedItems, toggleError } from "../store/slices/ticketSlice";
 
 export const applyFiltersAndSort = () => (dispatch, getState) => {
   const { tickets, filters } = getState();
   const { items, error, loading } = tickets;
-  if (error || loading) {
+
+  if (error || loading || items.length === 0) {
     console.log("подстраховка от дурака");
     return;
+  } else {
+    toggleError("unSetError");
   }
+
   const isAnyFilterSelected =
     filters.zero || filters.one || filters.two || filters.three || filters.all;
-  console.log(isAnyFilterSelected);
   const filtered = items.filter((ticket) => {
     const stops =
       ticket.segments[0].stops.length + ticket.segments[1].stops.length;
-
-    if (!isAnyFilterSelected) {
-      return true;
-    }
 
     return (
       filters.all ||
@@ -26,14 +25,14 @@ export const applyFiltersAndSort = () => (dispatch, getState) => {
       (filters.three && stops === 3)
     );
   });
-  console.log(filtered);
+
   let filteredByTabs;
 
   if (tickets.sortType === "cheapest") {
     filteredByTabs = filtered.sort((a, b) => a.price - b.price);
   }
+
   if (tickets.sortType === "fastest") {
-    console.log("быстрые");
     filteredByTabs = filtered.sort(
       (a, b) =>
         a.segments[0].duration +

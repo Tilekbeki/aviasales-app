@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTickets } from "../store/actions/ticketActions";
+import { toggleError } from "../store/slices/ticketSlice";
 import Ticket from "../Ticket/Ticket";
 import "./TicketList.scss";
 
@@ -15,7 +16,7 @@ const TicketList = () => {
   }, [dispatch]);
 
   if (loading) return <div className="loading-text">Загрузка...</div>;
-  if (error) return <div>Ошибка, не удалось получить данные - {error}</div>;
+  if (error) return <div>{error}</div>;
   const elements = displayedItems
     .slice(0, offset)
     .map((ticket, index) => (
@@ -33,7 +34,12 @@ const TicketList = () => {
         secondDuration={ticket.segments[1].duration}
       />
     ));
-  return <div className="ticket-list">{elements}</div>;
+  if (!displayedItems.length && !loading) {
+    dispatch(toggleError("setError"));
+    return <div>Рейсов, подходящих под заданные фильтры, не найдено</div>;
+  } else {
+    return <div className="ticket-list">{elements}</div>;
+  }
 };
 
 export default TicketList;

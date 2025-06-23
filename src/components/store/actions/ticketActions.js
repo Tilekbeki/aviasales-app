@@ -43,7 +43,7 @@ export const fetchTickets = () => {
 
       dispatch(fetchSuccess(allTickets));
     } catch (error) {
-      console.error("Ошибка получения билетов:", error);
+      console.error("Ошибка получения билетов");
       dispatch(fetchError(error.message));
     }
   };

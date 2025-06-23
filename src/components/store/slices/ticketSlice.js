@@ -8,16 +8,17 @@ const ticketsSlice = createSlice({
     filteredItems: [],
     displayedItems: [],
     loading: false,
-    error: null,
+    error: false,
     offset: 5,
   },
   reducers: {
     fetchStart(state) {
       state.loading = true;
-      state.error = null;
+      state.error = false;
     },
     fetchSuccess(state, action) {
       state.loading = false;
+      state.error = false;
       state.items = action.payload;
       state.displayedItems = action.payload.sort((a, b) => a.price - b.price);
     },
@@ -30,6 +31,14 @@ const ticketsSlice = createSlice({
       const limit = state.displayedItems.length;
       const newOffset = Math.min(state.offset + step, limit);
       state.offset = newOffset;
+    },
+    toggleError(state, action) {
+      state.loading = false;
+      if (action.type === "setError") {
+        state.error = true;
+      } else {
+        state.error = false;
+      }
     },
     sort(state, action) {
       state.sortType = action.payload;
@@ -51,5 +60,6 @@ export const {
   sort,
   setDisplayedItems,
   setSortedItems,
+  toggleError,
 } = ticketsSlice.actions;
 export default ticketsSlice.reducer;

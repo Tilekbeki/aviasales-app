@@ -41,4 +41,11 @@
         background: rgb(33, 150, 243);
         border: 1px solid rgb(33, 150, 243);
     }
+
+    .disabled {
+        pointer-events: none;
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
 }

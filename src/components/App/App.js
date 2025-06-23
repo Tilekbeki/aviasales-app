@@ -16,10 +16,9 @@ const App = () => {
       <div className="app-container">
         <Options />
         <main className="main">
-          {/* Other components will go here */}
           <Tabs />
           <TicketList />
-          {loading || error ? null : <Pagination />}
+          {!loading || !error ? null : <Pagination />}
         </main>
       </div>
     </>

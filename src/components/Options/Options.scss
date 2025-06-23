@@ -35,6 +35,11 @@
         gap: 10px;
         transition: all 1s;
 
+        &:has(input:disabled) {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
         input[type="checkbox"] {
             width: 20px;
             height: 20px;
