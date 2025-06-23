@@ -8,8 +8,8 @@ const Logo = () => {
   const classStatus = loading ? "rotating" : null;
   return (
     <div className="logo">
-      <img src={PlanetImg} alt="Planet image" className={classStatus} />
-      <img src={planeImg} alt="Plane Image" className="logo__plane" />
+      <img src={PlanetImg} alt="Planet" className={classStatus} />
+      <img src={planeImg} alt="Plane" className="logo__plane" />
     </div>
   );
 };
