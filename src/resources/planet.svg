@@ -1,0 +1,44 @@
+<svg width="60.000000" height="60.000000" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<filter id="filter_1_707_dd" x="-3.000000" y="13.000000" width="66.000000" height="66.000000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+			<feOffset dx="0" dy="8"/>
+			<feGaussianBlur stdDeviation="3.66667"/>
+			<feComposite in2="hardAlpha" operator="out" k2="-1" k3="1"/>
+			<feColorMatrix type="matrix" values="0 0 0 0 0.21569 0 0 0 0 0.40784 0 0 0 0 0.55686 0 0 0 0.25 0"/>
+			<feBlend mode="normal" in2="BackgroundImageFix" result="effect_dropShadow_1"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="effect_dropShadow_1" result="shape"/>
+		</filter>
+		<filter id="filter_1_708_dd" x="-11.000000" y="-10.000000" width="82.000000" height="82.000000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+			<feOffset dx="0" dy="1"/>
+			<feGaussianBlur stdDeviation="3.66667"/>
+			<feComposite in2="hardAlpha" operator="out" k2="-1" k3="1"/>
+			<feColorMatrix type="matrix" values="0 0 0 0 0.21569 0 0 0 0 0.40784 0 0 0 0 0.55686 0 0 0 0.3 0"/>
+			<feBlend mode="normal" in2="BackgroundImageFix" result="effect_dropShadow_1"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="effect_dropShadow_1" result="shape"/>
+		</filter>
+	</defs>
+	<g filter="url(#filter_1_707_dd)">
+		<path id="Shadow" d="M30 60C42.15 60 52 50.15 52 38C52 25.84 42.15 16 30 16C17.84 16 8 25.84 8 38C8 50.15 17.84 60 30 60Z" fill="#000000" fill-opacity="0" fill-rule="evenodd"/>
+		<path id="Shadow" d="M52 38C52 25.84 42.15 16 30 16C17.84 16 8 25.84 8 38C8 50.15 17.84 60 30 60C42.15 60 52 50.15 52 38Z" stroke="#38AEF5" stroke-opacity="0" stroke-width="0.000000"/>
+	</g>
+	<g filter="url(#filter_1_708_dd)">
+		<path id="Oval" d="M30 60C46.56 60 60 46.56 60 30C60 13.43 46.56 0 30 0C13.43 0 0 13.43 0 30C0 46.56 13.43 60 30 60Z" fill="#2196F3" fill-opacity="1.000000" fill-rule="evenodd"/>
+		<path id="Oval" d="M60 30C60 46.56 46.56 60 30 60C13.43 60 0 46.56 0 30C0 13.43 13.43 0 30 0C46.56 0 60 13.43 60 30ZM54.09 20.01Q56 24.61 56 30Q56 35.38 54.09 39.98Q52.19 44.57 48.38 48.38Q44.57 52.19 39.98 54.09Q35.38 56 30 56Q24.61 56 20.01 54.09Q15.42 52.19 11.61 48.38Q7.8 44.57 5.9 39.98Q4 35.38 4 30Q4 24.61 5.9 20.01Q7.8 15.42 11.61 11.61Q15.42 7.8 20.01 5.9Q24.61 4 30 4Q35.38 4 39.98 5.9Q44.57 7.8 48.38 11.61Q52.19 15.42 54.09 20.01Z" fill="#42A5F5" fill-opacity="1.000000" fill-rule="evenodd"/>
+	</g>
+	<mask id="mask1_709" mask-type="alpha" maskUnits="userSpaceOnUse" x="0.000000" y="0.000000" width="60.000000" height="60.000000">
+		<path id="Oval" d="M30 60C46.56 60 60 46.56 60 30C60 13.43 46.56 0 30 0C13.43 0 0 13.43 0 30C0 46.56 13.43 60 30 60Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+	</mask>
+	<g mask="url(#mask1_709)">
+		<path id="Line" d="M2.71 22.87L56.53 22.87" stroke="#42A5F5" stroke-opacity="1.000000" stroke-width="4.000000" stroke-linecap="square"/>
+		<path id="Line" d="M2.71 38.62L56.53 38.62" stroke="#42A5F5" stroke-opacity="1.000000" stroke-width="4.000000" stroke-linecap="square"/>
+		<path id="Path 2" d="M29.25 4.5C29.25 4.5 19.28 16.07 19.5 30.75C19.71 45.42 29.25 55.5 29.25 55.5" stroke="#42A5F5" stroke-opacity="1.000000" stroke-width="4.000000" stroke-linejoin="round" stroke-linecap="round"/>
+		<path id="Path 2" d="M30 4.5C30 4.5 39.96 16.07 39.74 30.75C39.53 45.42 30 55.5 30 55.5" stroke="#42A5F5" stroke-opacity="1.000000" stroke-width="4.000000" stroke-linejoin="round" stroke-linecap="round"/>
+	</g>
+</svg>

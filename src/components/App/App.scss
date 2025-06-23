@@ -1,9 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     background: rgb(243, 247, 250);
 }
 
 .app-container {
-    width: 754px;
+    width: 755px;
     margin: 0 auto;
     display: flex;
     gap: 20px;
@@ -13,4 +19,5 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 502px;
 }

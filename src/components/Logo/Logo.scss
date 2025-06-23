@@ -9,9 +9,23 @@
 }
 
 .logo {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 50px 0;
+    transition: all 0.5s;
+
+    &__plane {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     /* вращение */
+}
+
+.rotating {
+    animation: rotate360 2s linear infinite;
 }
